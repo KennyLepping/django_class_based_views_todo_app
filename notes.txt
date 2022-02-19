@@ -1,0 +1,63 @@
+Select interpreter (virtual environment)
+
+Install Python VS Code
+
+place breakpoints
+
+CTRL + shift + D - Choose Python Django Configuration
+
+Run and Debug or press F5
+
+printing to console is a way to debug - print(stuff)
+
+Allows to run code line by line - can see variables, methods, function, requests
+in debug side panel
+
+
+_set = For querying an object with that has a foreign key field in another model
+
+Example:
+kenny = User.objects.get(username='kenny')
+kenny.task_set.all()
+kenny.task_set.get(title='Bills')
+
+For reverse or parent relationship querying:
+Task.objects.filter(user__username__startswith='kenny')
+
+startswith is a field lookup in Django - https://docs.djangoproject.com/en/4.0/ref/models/querysets/
+
+csrf tokens protect from cross site forgery attacks, protecting website, usually sent with forms
+
+Intro
+How comfortable are you with Python?
+HTML/CSS Skill level?
+Any JavaScript Experience?
+What is Django?
+What can you build with Django?
+Difference Between a Project & App?
+How do we initialize a project?
+How do we initialize an app?
+How do we start our development server?
+What does the settings.py file do?
+What are models? What are views? What are templates?
+What are url patterns?
+What is the Django Admin panel?
+FBV vs CBV - funtion based views vs class based views
+What database system do you prefer?
+How do you set up a database connection?
+Why do we add names to URL's & how do we access them dynamically?
+Where do we store templates?
+Django Templating Language
+What are static files?
+Serving static files during development?
+What is MEDIA_ROOT
+What does "python manage.py collectstatic" do?
+Serving static files during production?
+Common Model attributes
+Querying the database
+What are CSRF Tokens?
+What are Model Forms?
+What is DRF?
+What are Django Signals?
+How can we set restrictions on views?
+What are Model Serializers?

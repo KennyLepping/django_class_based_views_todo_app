@@ -25,7 +25,7 @@ class RegisterPage(FormView):
     template_name = 'core/register.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy('tasks')  # Redirects to the task_lsit.html by its name
+    success_url = reverse_lazy('tasks')  # Redirects to the task_list.html by its name
 
     # If the form is valid, save the user and login the user automatically
     def form_valid(self, form):
@@ -82,7 +82,8 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
     fields = ['title', 'description', 'complete']
-    success_url = reverse_lazy('tasks')
+    success_url = reverse_lazy('tasks') # If we are using success_url we have to use reverse_lazy().
+                                        # If we are reversing inside a function we can use reverse().
 
 
 class DeleteView(LoginRequiredMixin, DeleteView):
