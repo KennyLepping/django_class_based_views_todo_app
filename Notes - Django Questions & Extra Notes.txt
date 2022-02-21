@@ -11,7 +11,7 @@ What does the settings.py file do?
 What are models? What are views? What are templates?
 What are url patterns?
 What is the Django Admin panel?
-FBV vs CBV - function based views vs class based views
+FBV vs CBV - funtion based views vs class based views
 What database system do you prefer?
 How do you set up a database connection?
 Why do we add names to URL's & how do we access them dynamically?
