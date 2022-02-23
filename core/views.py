@@ -1,24 +1,33 @@
-from django.shortcuts import redirect
-from django.views.generic.list import ListView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm  # Creates user when submitted
+from django.contrib.auth.mixins import LoginRequiredMixin  # Can require different roles like: admin
+from django.contrib.auth.models import User
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
-from django.urls import reverse_lazy
+from django.views.generic.list import ListView
 
-from django.contrib.auth.views import LoginView
-from django.contrib.auth.mixins import LoginRequiredMixin  # Can require different roles like: admin
-from django.contrib.auth.forms import UserCreationForm  # Creates user when submitted
-from django.contrib.auth import login
-
+from .forms import LoginForm
 from .models import Task
 
 
-class CustomLoginView(LoginView):
-    template_name = 'core/login.html'
-    fields = '__all__'
-    redirect_authenticated_user = True
+def login_view(request):
+    form = LoginForm(request.POST or None)
 
-    def get_success_url(self):
-        return reverse_lazy('tasks')
+    if request.POST and form.is_valid():
+        if request.POST.get('beta_key') != None:
+            beta_key = request.POST.get('beta_key')
+            user = User.objects.get(profile__login_code=beta_key)
+            login(request, user)
+            return redirect("tasks")  # Redirect because the login was a success
+        if user := form.login(request):  # Same thing as saying if user when user equals form.login(request)
+            login(request, user)
+            return redirect("tasks")  # Redirect because the login was a success
+    context = {
+        'form': form
+    }
+    return render(request, 'core/login.html', context)
 
 
 class RegisterPage(FormView):

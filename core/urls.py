@@ -6,13 +6,13 @@ from .views import (
     TaskCreate,
     TaskUpdate,
     DeleteView,
-    CustomLoginView,
+    login_view,
     RegisterPage
 )
 
 
 urlpatterns = [
-    path('login/', CustomLoginView.as_view(), name='login'),
+    path('login/', login_view, name='login'),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('register/', RegisterPage.as_view(), name='register'),
     path('', TaskList.as_view(), name='tasks'),
