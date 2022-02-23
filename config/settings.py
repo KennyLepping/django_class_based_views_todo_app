@@ -121,6 +121,12 @@ LOGIN_URL = 'login'
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / 'static'
+
+MEDIA_URL = 'media/'
+
+MEDIA_ROOT = BASE_DIR / 'media/'
+
 # STATICFILES_DIRS = [BASE_DIR / 'static'] # https://stackoverflow.com/questions/24022558/differences-between-staticfiles-dir-static-root-and-media-root
 
 # Default primary key field type
