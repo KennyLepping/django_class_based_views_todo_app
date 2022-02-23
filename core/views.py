@@ -16,10 +16,10 @@ def login_view(request):
     form = LoginForm(request.POST or None)
 
     if request.POST and form.is_valid():
-        if request.POST.get('beta_key') != None:
-            beta_key = request.POST.get('beta_key')
-            user = User.objects.get(profile__login_code=beta_key)
-            login(request, user)
+        if request.POST.get('beta_key') != None:  # If beta key is entered
+            beta_key = request.POST.get('beta_key')  # Get the beta key from the form
+            user = User.objects.get(profile__login_code=beta_key)  # Get the user with the beta key
+            login(request, user)  # Log the user in
             return redirect("tasks")  # Redirect because the login was a success
         if user := form.login(request):  # Same thing as saying if user when user equals form.login(request)
             login(request, user)
