@@ -54,6 +54,7 @@ https://www.youtube.com/watch?v=9ai0b1LRMQM&ab_channel=DennisIvy
 
 12. FBV vs CBV
     See views and branches of this project
+    https://ccbv.co.uk/
 
 13. What database system do you prefer?
     something like PostgreSQL, Oracle, MongoDB for production
