@@ -131,3 +131,10 @@ label {
 .card-body {
   padding: 20px;
 }
+
+footer {
+  margin-top: 10px;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(90deg, #eea390 0%, #eb796f 43%, #eb796f 100%);
+}

@@ -69,9 +69,24 @@ Why do we add names to URL's & how do we access them dynamically?
     Because it makes it more dynamic and if we have to change the URL path.
 
 Where do we store templates?
-    We store templates either in the default
+    We store templates either in the default app structure in a folder called templates
+    in subfolder called whatever the app name is and then put your templates there.
+    Or in settings.py, in the Templates variable in 'DIRS' can use this 
+    BASE_DIR \ 'templates' and move templates to the base directory where manage.py
+    is. Can store the templates really anywhere by setting the file path in the
+    mentioned 'DIRS'
 
 Django Templating Language
+    Django’s template language is designed to strike a balance between power and ease.
+    It’s designed to feel comfortable to those used to working with HTML.
+    If you have any exposure to other text-based template languages,
+    such as Smarty or Jinja2, you should feel right at home with Django’s templates.
+    -Tags - {{}}, {%%}
+    -Variables
+    -including
+    -Inheriting
+
+
 What are static files?
 Serving static files during development?
 What is MEDIA_ROOT?
