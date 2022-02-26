@@ -115,7 +115,6 @@ USE_TZ = True
 LOGIN_URL = 'login'
 
 
-# STATICFILES_DIRS = [BASE_DIR / 'static'] # https://stackoverflow.com/questions/24022558/differences-between-staticfiles-dir-static-root-and-media-root
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
