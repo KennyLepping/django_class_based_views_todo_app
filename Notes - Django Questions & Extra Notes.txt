@@ -93,7 +93,10 @@ What is MEDIA_ROOT?
 What does "python manage.py collectstatic" do?
 Serving static files during production?
 Common Model attributes
+
 Querying the database
+    See field lookups: https://docs.djangoproject.com/en/4.0/ref/models/querysets/#id4
+
 What are CSRF Tokens?
 What are Model Forms?
 
