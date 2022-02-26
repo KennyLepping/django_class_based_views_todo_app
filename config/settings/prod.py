@@ -21,8 +21,10 @@ AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 
+# Use this custom domain when only using S3 and not CloudFront:
 # AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
+# Use this custom domain when using both S3 and CloudFront:
 AWS_S3_CUSTOM_DOMAIN = 'd2yolbz4x8zdut.cloudfront.net'
 
 AWS_DEFAULT_ACL = None
