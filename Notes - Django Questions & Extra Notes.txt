@@ -8,28 +8,69 @@ https://www.youtube.com/watch?v=9ai0b1LRMQM&ab_channel=DennisIvy
     what frameworks are and can mention front-end frameworks
 
 2. What can you build with Django? - 
-E-Commerce, Social Media websites/apps, blogs, 
-Can incorporate Python machine learning libraries into Django
-Instagram, Pinterest, Dropbox, YouTube
-Can talk about how Django is good for building APIs
+    E-Commerce, Social Media websites/apps, blogs, 
+    Can incorporate Python machine learning libraries into Django
+    Instagram, Pinterest, Dropbox, YouTube
+    Can talk about how Django is good for building APIs
 
 3. Difference Between a Project & App? 
-A project is an overall environment, it's your basic website in a sense.
-An app is like a component of that website, where you hold your project logic
+    A project is an overall environment, it's your basic website in a sense.
+    An app is like a component of that website, where you hold the project logic.
+    The project can be composed of many apps is the configuration and the apps are
+    components of that website and give an example.
+    Example:
+    Facebook.com would be the project
+    Different apps would be like: newsfeed, groups, users
+    
 
+4. How do we initialize a project? django-admin startproject projectname
+5. How do we initialize an app? python manage.py startapp appname
+6. How do we start our development server? python manage.py runserver
+7. What does the settings.py file do?
+    settings.py is your project configuration. It's used for database connections
+    configuring app and it's the overall command center of the project.
 
-How do we initialize a project?
-How do we initialize an app?
-How do we start our development server?
-What does the settings.py file do?
-What are models? What are views? What are templates?
-What are url patterns?
-What is the Django Admin panel?
-FBV vs CBV - function based views vs class based views
-What database system do you prefer?
-How do you set up a database connection?
+8. What are models? What are views? What are templates?
+    MVT Structure
+    Models are a class based representation of database tables so they represent
+    our database structures.
+    The view is basically business logic and what gets triggered and returns back
+    are template responses and so on.
+    This is where we return templates and the view typically return templates.
+
+9. What are url patterns?
+    These are url paths to configure the websites routing. It's like exits on a
+    freeway. It's connects URLs to views to the website (navigation).
+
+10. What is the Django Admin panel?
+    Quick setup that Django provides kind of like a graphical user interface to
+    see data, to connect with it, edit the data, provides CRUD functionality, can
+    be customized in admin.py in appr, to connect with it, edit the data, 
+    provides CRUD functionality, can be customized in admin.py in apps.
+
+11. Make migrations & migrate command
+    Make migrations creates the basic migrations and preps the database for changes
+    Migrate enforces the changes and applies changes to the database
+
+12. FBV vs CBV
+    See views and branches of this project
+
+13. What database system do you prefer?
+    something like PostgreSQL, Oracle, MongoDB for production
+    not db.sqlite3 for production, only for development
+
+14. How do you set up a database connection?
+    How to set up database connection - in settings.py - There's a database variable
+    that is a dictionary where we can update and modify our database connections 
+
 Why do we add names to URL's & how do we access them dynamically?
+    Example: <a href="{% url 'task-update' task.id %}">{{task}}</a>
+    Not using just plain URLs
+    Because it makes it more dynamic and if we have to change the URL path.
+
 Where do we store templates?
+    We store templates either in the default
+
 Django Templating Language
 What are static files?
 Serving static files during development?
