@@ -136,6 +136,5 @@ footer {
   margin-top: 10px;
   padding: 20px;
   color: white;
-  /* background: linear-gradient(90deg, #eea390 0%, #eb796f 43%, #eb796f 100%); */
-  background: blue;
+  background: linear-gradient(90deg, #eea390 0%, #eb796f 43%, #eb796f 100%);
 }
