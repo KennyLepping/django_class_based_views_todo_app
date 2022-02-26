@@ -1,9 +1,23 @@
 Good video for going over these questions:
 https://www.youtube.com/watch?v=9ai0b1LRMQM&ab_channel=DennisIvy
 
-What is Django? - Backend framework for web development - MVT
-What can you build with Django? - e-commerce, social media websites/apps - Instagram, Netflix,
-Difference Between a Project & App? 
+1. What is Django? - Django is a Backend Python based web framework  - MVT
+    django is a backend python based web framework 
+    Reference a flask framework or mention frameworks from other 
+    libraries like Express and Node.js or PHP in Larval to show that you know 
+    what frameworks are and can mention front-end frameworks
+
+2. What can you build with Django? - 
+E-Commerce, Social Media websites/apps, blogs, 
+Can incorporate Python machine learning libraries into Django
+Instagram, Pinterest, Dropbox, YouTube
+Can talk about how Django is good for building APIs
+
+3. Difference Between a Project & App? 
+A project is an overall environment, it's your basic website in a sense.
+An app is like a component of that website, where you hold your project logic
+
+
 How do we initialize a project?
 How do we initialize an app?
 How do we start our development server?
@@ -11,7 +25,7 @@ What does the settings.py file do?
 What are models? What are views? What are templates?
 What are url patterns?
 What is the Django Admin panel?
-FBV vs CBV - funtion based views vs class based views
+FBV vs CBV - function based views vs class based views
 What database system do you prefer?
 How do you set up a database connection?
 Why do we add names to URL's & how do we access them dynamically?
@@ -19,7 +33,7 @@ Where do we store templates?
 Django Templating Language
 What are static files?
 Serving static files during development?
-What is MEDIA_ROOT
+What is MEDIA_ROOT?
 What does "python manage.py collectstatic" do?
 Serving static files during production?
 Common Model attributes

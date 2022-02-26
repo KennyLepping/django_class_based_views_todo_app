@@ -74,3 +74,6 @@ csrf tokens protect from cross site forgery attacks, protecting website, usually
 How comfortable are you with Python?
 HTML/CSS Skill level? html - tags - main, section, CSS - flexbox, grid
 Any JavaScript Experience?
+
+To link to a template of another app:
+https://stackoverflow.com/questions/26812980/django-template-url-from-another-app
