@@ -37,12 +37,17 @@ AWS_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 }
 
+# Old media settings:
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
+# Old static settings:
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
+# https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
+# This stores the media files in an S3 subdirectory called 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+# This stores the static files in an S3 subdirectory called 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
