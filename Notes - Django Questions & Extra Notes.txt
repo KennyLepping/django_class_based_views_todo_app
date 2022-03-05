@@ -22,10 +22,12 @@ https://www.youtube.com/watch?v=9ai0b1LRMQM&ab_channel=DennisIvy
     Facebook.com would be the project
     Different apps would be like: newsfeed, groups, users
     
-
 4. How do we initialize a project? django-admin startproject projectname
+
 5. How do we initialize an app? python manage.py startapp appname
+
 6. How do we start our development server? python manage.py runserver
+
 7. What does the settings.py file do?
     settings.py is your project configuration. It's used for database connections
     configuring app and it's the overall command center of the project.
@@ -36,7 +38,7 @@ https://www.youtube.com/watch?v=9ai0b1LRMQM&ab_channel=DennisIvy
     our database structures.
     The view is basically business logic and what gets triggered and returns back
     are template responses and so on.
-    This is where we return templates and the view typically return templates.
+    Templates - this is where we return templates and the view typically return templates.
 
 9. What are url patterns?
     These are url paths to configure the websites routing. It's like exits on a
@@ -82,29 +84,101 @@ Django Templating Language
     It’s designed to feel comfortable to those used to working with HTML.
     If you have any exposure to other text-based template languages,
     such as Smarty or Jinja2, you should feel right at home with Django’s templates.
-    -Tags - {{}}, {%%}
-    -Variables
-    -including
-    -Inheriting
+    -Tags - Example: {{}}, {%%}
+    -Variables - Example: {{ comment }}
+    -including - Example: {% include 'core/footer.html' %}
+    -Inheriting - Example: {% extends 'core/base.html' %}
+    We add a block tag into the parent template and can use the extends tag with 
+    the block tag inside.
 
+    -For loops, conditional statements, and blocks - see task_list.html
 
 What are static files?
-Serving static files during development?
-What is MEDIA_ROOT?
-What does "python manage.py collectstatic" do?
+    This is where we store CSS, JavaScript, and image files. How to configure
+    static files - In settings.py set the file STATICFILES_DIRS variable as a list
+    pointing to where we are going to store our static files.
+
+What is MEDIA_ROOT? MEDIA_ROOT is where we upload user generated content.
+
+What does "python manage.py collectstatic" do? 
+    This takes all of our static files from what we set in STATIC_ROOT. It bundles them,
+    duplicates them, preps files for production and how we deliver them,
+    controls how we output our files.
+
 Serving static files during production?
+    There are differences between storing static files locally and during production.
+    Django isn't designed to store static files in production so we use services like 
+    AWS S3 Buckets, Netlify, or with Django packages like whitenoise.
+
 Common Model attributes
+    What is a ForeignKey? This just sets a OneToMany relationship (or ManyToOne)
+                          between one model and another.
+
+    What is OneToOne field? Sets a one to one relationship between one model and
+                            another.
+
+    What is a ManyToMany field? This sets a many to many relationship. 
+
+    What are many to many relationships? This relationship refers to a relationship 
+                                         between tables in a database when a parent 
+                                         row in one table contains several child rows 
+                                         in the second table, and vice versa. An
+                                         example would be a publication has many article
+                                         and an article has many publications.
+
+    What is the character field attribute? It's a string value. An alternative is
+                                           a textfield.
 
 Querying the database
     See field lookups: https://docs.djangoproject.com/en/4.0/ref/models/querysets/#id4
+    Make basic queries to the database. 
+    How would you query all the items in a database table? Model.objects.all()
+    How would you query one item in a database table? Model.objects.get(user='kenny')
+    How do you filter item by multiple attributes? Model.objects.filter(x=1, y=2)
+                                                   Equivalent to: WHERE ... x=1 AND y=2
+    What does __set.all() or __set.filter(...) do?
+        kenny = User.objects.get(username='kenny')
+        kenny.task_set.all()
+        kenny.task_set.get(title='Walk Dog')  # Return just one object
+        kenny.task_set.filter(category='Pets')  # Can return multiple objects
+
+    Can you query upwards? 
+        Task.objects.filter(user__username__startswith='kenny')
+
 
 What are CSRF Tokens?
+    This helps against cross site forgery attacks. Used in POST, PUT, DELETE requests.
+    CSRF tokens are typically sent with forms to protect data.
+
 What are Model Forms?
+    These are class based representations of forms. A form gets generated from a model.
+    The model form autogenerates all of the fields from the model or just generates 
+    the specified fields.
 
 What is DRF?
+    This is the Django Rest framework. It is used to build APIs. This is typically
+    used because we want to React, Angular, Vue as a frontend framework or more 
+    JavaScript. The Django Rest Framework helps to build out the API.
+    The JavaScript Fetch API or Axios are typically used to fetch data from the DRF
+    API.
+
 What are Django Signals?
+    Signals basically make Django do something after something else happens. An example
+    would be that whenever a user is created, create the users profile also. A signal
+    is sent to a receiver that creates the user profile.
+
 How can we set restrictions on views?
+    We can use middleware for this, we can use decorators, we can custom build decorators.
+    If we're using class based views, we can set the permissions class. Can set it by user
+    roles or user attributes.
+
 What are Model Serializers?
+    Serializing data is a way of taking our Python data and turning it into
+    something like JSON data or XML data. A model serializer is something that we
+    can use kind of like a model form where we create a class based around a model
+    and then the data in that model gets turned into JSON format.
+
+
 
 Download Heroku CLI
 Make AWS account to store static files in an S3 bucket
@@ -112,7 +186,6 @@ Make AWS account to store static files in an S3 bucket
 Heroku will have the Postgres Database, SSL, Django code including the templates
 AWS S3 Buckets will store the static files and media files, can S3 Buckets
 AWS Cloudfront - Serves static files faster
-
 
 VSCode Debugging Notes:
 Select interpreter (virtual environment)
@@ -148,3 +221,16 @@ csrf tokens protect from cross site forgery attacks, protecting website, usually
 How comfortable are you with Python?
 HTML/CSS Skill level? html - tags - main, section, CSS - flexbox, grid
 Any JavaScript Experience?
+
+
+
+I would use an S3 Bucket
+
+Could you link to the PDF?
+
+Execute view from clicking link, 
+
+Connect to the IP of your work server in the view.
+Run the python script in the view and return the files context
+
+We ended at 4:38pm
