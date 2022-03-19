@@ -157,7 +157,7 @@ What are Model Forms?
 
 What is DRF?
     This is the Django Rest framework. It is used to build APIs. This is typically
-    used because we want to React, Angular, Vue as a frontend framework or more 
+    used because we want to use React, Angular, Vue as a frontend framework or more 
     JavaScript. The Django Rest Framework helps to build out the API.
     The JavaScript Fetch API or Axios are typically used to fetch data from the DRF
     API.
