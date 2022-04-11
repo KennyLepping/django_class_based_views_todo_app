@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  max-width: 551px;
+  max-width: 550px;
   margin: auto;
   background: #fff;
   -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
